@@ -2,10 +2,10 @@ import number from './number';
 
 export default function checking(x) {
   try {
-    if (Number.isInteger(x)) {
+    if (Number.isNaN(parseInt(x, 10)) || parseInt(x, 10) === 0) {
       return x;
     }
-    throw new Error('Ввели не число в десятичной форме');
+    throw new Error(`${x} не является числом`);
   } catch (e) {
     return (e);
   }
